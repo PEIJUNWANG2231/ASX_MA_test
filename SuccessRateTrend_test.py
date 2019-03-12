@@ -5,6 +5,7 @@ Spyder Editor
 This is a temporary script file.
 """
 
+# to gain the success rate  of trading system
 import pandas as pd
 
 
@@ -67,12 +68,15 @@ def new_column(file_name,m):
     
     
     df1=df.groupby(['New_Year&Month']).mean()
-    df1.to_csv('D:/Python Codes Lib/1.csv')
+    path='D:/Python Codes Lib/'+file_name+'_month'+str(m)+'_SuccessRate.csv'
+    df1.to_csv(path)
     return df1
 
 def main():
-    new_column('ASX300_m=1',m=2)
-
+    new_column('5_8_m=1',m=12)
+    new_column('5_8_13_m=1',m=12)
+    new_column('8_13_m=1',m=12)
+    
 if __name__ == '__main__':
     main()
 

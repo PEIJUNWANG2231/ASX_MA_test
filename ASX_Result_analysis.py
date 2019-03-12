@@ -4,6 +4,7 @@ Created on Sun Feb 24 21:03:11 2019
 
 @author: XPS15
 """
+# before  ASX result analysis, the data should be standized
 import pandas as pd
 import sys
 sys.path.append(r'D:\Python Codes Lib\ASX list of code')
