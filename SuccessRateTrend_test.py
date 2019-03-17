@@ -56,11 +56,11 @@ def new_column(file_name,m):
     d={}
     
     #先填充list2的元素
-    for i in range(0,k-m):
+    for i in range(0,k):
         d[list2[i]]=list2[i]
     
     #类聚，m个为一组
-    for i in range(0,k-m,m):
+    for i in range(0,k,m):
         for v in range(1,m):
             d[list2[i+v]]=list2[i]
     
