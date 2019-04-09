@@ -4,6 +4,9 @@ Created on Wed Dec 26 15:01:28 2018
 
 @author: XPS15
 """
+
+#step 4 ASXPartFourMatchUpFractals
+
 import sys
 sys.path.append(r'D:\Python Codes Lib\ASX list of code')
 from ASXPartTwoAveragerGluing import AveragerGluing_5_8,AveragerGluing_8_13,AveragerGluing_5_8_13

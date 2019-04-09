@@ -4,10 +4,14 @@ Created on Wed Dec 19 21:34:26 2018
 
 @author: XPS15
 """
+# step 2 ASXPartTwoAveragerGluing
+# select the implications of momentum effect
+
 from interval import Interval
 import pandas as pd
 import datetime
 import numpy as np
+
 # example: 5&8均线粘合
 #para: dataframe,target:8&13,daily_pct:实体大小,
 #when change target, 实体镶嵌也要修改

@@ -4,6 +4,9 @@ Created on Fri Jan 25 16:10:05 2019
 
 @author: XPS15
 """
+# step 1
+# Data preparation of further data manipulating 
+# save the CSV in local laptop 
 
 import pandas as pd
 import pandas_datareader.data as web
@@ -11,7 +14,7 @@ import datetime
 import fix_yahoo_finance as yf
 import numpy as np
 
-#SMA数组的获取，作为鳄鱼线的基础
+#SMA is a type of MA, it could be call by talib
 def SMA(close,n,m=1):
     result = np.array([np.nan]*len(close))
     result[n-2]=close[:n-1].mean()
@@ -19,7 +22,7 @@ def SMA(close,n,m=1):
         result[i]=(m*close[i]+(n-m)*result[i-1])/n
     return result
 
-#对数据组的基础处理：   
+#basic operation of financial market data from Yahoo APIs  
 def Alligator(df,n=1):
     
     df['Var1']=(df['High']+df['Low'])/2
@@ -27,7 +30,8 @@ def Alligator(df,n=1):
     average=[5,8,13] #fibonacci squence:5,8,13 
     moves=[3,5,8]
     names=['jaw','teeth','lips']
-    #生成3条对应的均线
+    
+    #produce the three SMA: 5,8,13, and shift forward 3,5,8 unit
     for i in range(3):
         df[names[i]]=SMA(df['Var1'],average[i])
         df[names[i]]=df[names[i]].shift(periods=moves[i])
@@ -36,7 +40,11 @@ def Alligator(df,n=1):
     df['8&13']=df['teeth']-df['lips']
     df['5&8']=abs(df['5&8'])
     df['8&13']=abs(df['8&13'])
+    
     #均线粘合的差值由close来决定
+    
+    #compare data is decided by the close price
+    
     df['compare']=((df['Close']/10).astype(int)+n)*0.01
     df['daily_pct']=abs(df['Open']-df['Close'])/df['Close']
     df=df.dropna()

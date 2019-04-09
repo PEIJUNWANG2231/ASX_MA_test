@@ -4,6 +4,9 @@ Created on Fri Dec 21 13:33:20 2018
 
 @author: XPS15
 """
+
+# step 3 ASXPartThreeFractals
+
 import datetime
 import pandas as pd
 import numpy as np

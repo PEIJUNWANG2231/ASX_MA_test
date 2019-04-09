@@ -4,6 +4,8 @@ Created on Wed Jan  2 19:09:15 2019
 
 @author: XPS15
 """
+#step 7 ASXPartSevenResult
+
 import sys
 sys.path.append(r'D:\Python Codes Lib\ASX list of code')
 from ASXPartTwoAveragerGluing import AveragerGluing_5_8

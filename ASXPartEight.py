@@ -4,6 +4,8 @@ Created on Sun Jan  6 22:54:59 2019
 
 @author: XPS15
 """
+#ASXPartEight
+
 import sys
 sys.path.append(r'D:\Python Codes Lib\ASX list of code')
 from ASXPartTwoAveragerGluing import AveragerGluing_5_8,AveragerGluing_8_13,AveragerGluing_5_8_13
@@ -13,6 +15,7 @@ from ASXPartFiveMatchDownFractals import MatchDownFractals
 from ASXPartSixEnterAndLossPoint import EnterPoint,StopLossPoint
 import pandas as pd
 import datetime
+import winsound
 
 #遍历所有的股票，输出到一张excel中
 # para: code and list1
@@ -141,13 +144,17 @@ def operate_5_8_13():
 
 def main():
     df1=operate_5_8()
-    df1.to_csv('D:/Python Codes Lib/5_8.csv')
+    df1.to_csv('D:/Python Codes Lib/ASX operations/5_8.csv')
     
     df2=operate_8_13()
-    df2.to_csv('D:/Python Codes Lib/8_13.csv')
+    df2.to_csv('D:/Python Codes Lib/ASX operations/8_13.csv')
     
     df3=operate_5_8_13()
-    df3.to_csv('D:/Python Codes Lib/5_8_13.csv')
+    df3.to_csv('D:/Python Codes Lib/ASX operations/5_8_13.csv')
+    
+    duration = 1000  # millisecond
+    freq = 440  # Hz
+    winsound.Beep(freq, duration)
     
 def test():
     df1=operate_5_8()
@@ -165,6 +172,10 @@ def test():
     df3=df3[~df3['result'].str.contains('no result')]
     df3.to_csv('D:/Python Codes Lib/5_8_13.csv')
 
+    duration = 1000  # millisecond
+    freq = 440  # Hz
+    winsound.Beep(freq, duration)
+    
 if __name__ == '__main__':
     #test use test()
     test()

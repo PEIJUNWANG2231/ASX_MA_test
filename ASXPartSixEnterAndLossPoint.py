@@ -4,6 +4,8 @@ Created on Sun Dec 30 18:34:08 2018
 
 @author: XPS15
 """
+#step 6 ASXPartSixEnterAndStopLossPoint
+
 import sys
 sys.path.append(r'D:\Python Codes Lib\ASX list of code')
 from ASXPartThreeFractals import UpFractal, DownFractal
